@@ -22,7 +22,9 @@ consul-service:
   service.running:
     - name: consul
     - enable: True
+    - reload: True
     - watch:
       - file: consul-init-file
+      - file: /etc/consul.d/*
 
 {%- endif %}
