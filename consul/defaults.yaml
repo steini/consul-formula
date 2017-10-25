@@ -5,7 +5,7 @@ consul:
   service: false
   config:
     server: false
-    bind_addr: 0.0.0.0
+    bind_addr: {{ salt['grains.get']('ipv4') | last }}
     data_dir: /var/consul
     ui: true
     enable_debug: false
